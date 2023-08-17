@@ -3,11 +3,12 @@
 
 if  [ "$#" -ne 1 ]; then
         echo "usage   : $0 {path}"
-        echo "example : $0 /Users/Hambzonk"
+        echo "example : $0 /Users/Conan"
         exit 0
 fi
 
 path=$1
 #sudo --stdin find ${path} -name ".DS_Store" -print -delete
 find ${path} -name ".DS_Store" -print -delete
-echo ".DS_Store clear in ${path} !"
+find ${path} -name "._*" -print -delete
+echo "${path} is clear !"
